@@ -5,7 +5,6 @@ import { getAuth } from "../../../redux/auth/reducer";
 import { LOGOUT } from "../../../redux/auth/types";
 import { getPosts } from "../../../redux/post/actions";
 import { REMOVE_DATA } from "../../../redux/transfer/types";
-import Post from "../../Responsive/Post";
 import "./Sidebar.css";
 function Siderbar() {
   const [active, setActive] = useState("");
@@ -190,7 +189,6 @@ function Siderbar() {
                         </li>
                       </ul>
                     </li>{" "}
-                    <Post />
                   </>
                 ) : (
                   <li>
