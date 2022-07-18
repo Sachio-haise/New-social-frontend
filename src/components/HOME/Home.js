@@ -228,7 +228,7 @@ function Home() {
               </div>
               <div className="card-footer">
                 Join our discord channel to collaborator our project. &nbsp;
-                <a href="https://www.facebook.com/">Discord</a>
+                <a href="https://discord.gg/5he8ybHj">Discord</a>
               </div>
             </div>
           </div>
