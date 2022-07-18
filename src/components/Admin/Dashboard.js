@@ -29,8 +29,8 @@ function Dashboard() {
             </tr>
           </thead>
           <tbody className="fw-bold">
-            {users.users &&
-              users.users.map((user) => (
+            {users?.users &&
+              users?.users.map((user) => (
                 <tr key={user._id}>
                   <th scope="row">{user._id}</th>
                   <td>{user.name}</td>
