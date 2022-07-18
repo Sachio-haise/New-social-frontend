@@ -98,6 +98,10 @@ function Home() {
   };
 
   const commentPost = async (id) => {
+    if (!auth?.user) {
+      navigate("/auth");
+      return;
+    }
     setCreateLoading(id);
     if (createLoading) {
       return;
