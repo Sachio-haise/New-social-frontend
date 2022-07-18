@@ -1,0 +1,154 @@
+.navbar {
+  background-color: #2b2b2b;
+  min-width: 700px;
+}
+
+.nav-link,
+.navbar-brand {
+  color: white;
+  height: 30px;
+  font-weight: bold;
+  width: 90px;
+}
+
+.setting > a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  margin-right: 2rem;
+  font-size: 1rem;
+}
+
+.setting > a > img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.offcanvas {
+  width: 250px;
+  background-color: #2b2b2b;
+  color: white;
+  font-weight: bold;
+}
+.dropdown-menu {
+  border: 2px white solid;
+  border-radius: 5%;
+  background-color: #222222;
+}
+
+.modal-backdrop {
+  background-color: transparent;
+}
+
+.dropdown {
+}
+
+.dropdown-item {
+  color: white;
+  font-weight: bold;
+}
+
+.offcanva-link {
+  width: 100%;
+  color: white;
+  border-left: 8px red solid;
+  background-color: #222222;
+  height: 50px;
+}
+
+.search {
+  width: 400px;
+}
+
+.navbar-toggler-icon {
+  color: white;
+  font-size: 1.8rem;
+}
+.navbar-toggler:focus {
+  outline: none !important;
+  border: none;
+  box-shadow: none !important;
+}
+
+.search > input:focus,
+input:active:focus,
+input.active:focus,
+input.focus,
+input:active.focus,
+input.active.focus {
+  outline: none !important;
+  border: none;
+  box-shadow: none !important;
+  background-color: gray;
+  color: white;
+  font-weight: bold;
+}
+
+.search > input {
+  background-color: gray;
+  color: white;
+  font-weight: bold;
+  border: none;
+}
+
+.search > input::placeholder {
+  color: white;
+  font-weight: bold;
+}
+
+.search > .btn {
+  background-color: gray;
+}
+
+.btn:focus,
+.btn:active:focus,
+.btn.active:focus,
+.btn.focus,
+.btn:active.focus,
+.btn.active.focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.offcanva-link:hover {
+  color: red;
+}
+
+.nav-link-child {
+  text-decoration: none;
+  color: white;
+}
+
+.nav-link-child:hover,
+.nav-link:hover,
+.navbar-brand:hover {
+  color: red;
+}
+
+.nav-link-parent {
+  background-color: #363636;
+  padding-left: 40px;
+}
+
+.profile-pic {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 3px solid white;
+}
+
+.profile-descri > h2 {
+  color: red;
+}
+
+.navbar-collapse .sign_up {
+  color: white;
+  list-style-type: none;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.navbar-collapse .sign_up:hover {
+  color: red;
+}

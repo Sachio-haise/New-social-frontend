@@ -1,0 +1,19 @@
+.user-table thead th {
+  background-color: #2b2b2b;
+  min-width: 200px;
+  color: #dc3545;
+  font-size: 1.3rem;
+}
+.user-table tbody th {
+  color: #dc3545;
+}
+
+.user-table tbody td {
+  color: whitesmoke;
+}
+.user-table table {
+  text-align: center;
+  min-width: 600px;
+  border-collapse: separate;
+  border-spacing: 0.25em 1em;
+}

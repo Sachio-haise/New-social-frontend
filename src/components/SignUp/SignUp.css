@@ -1,0 +1,36 @@
+.sign-up {
+  background-color: #2b2b2b;
+  width: 500px;
+  border-radius: 10px;
+}
+.sign-up .input::placeholder {
+  color: #363636;
+  font-weight: bold;
+}
+
+.sign-up .input {
+  background-color: #2b2b2b;
+  color: red;
+  font-weight: bold;
+  width: 100%;
+  display: block;
+  outline: none;
+  border-radius: 7px;
+}
+
+.sign-up .input:focus {
+  background-color: #2b2b2b;
+}
+
+.sign-up button:hover {
+  color: red;
+  background-color: #2b2b2b;
+}
+
+.sign-up a {
+  background-color: #2b2b2b;
+}
+
+.sign-up button {
+  background-color: #363636;
+}

@@ -1,0 +1,18 @@
+.sign-up {
+  background-color: #2b2b2b;
+
+  border-radius: 10px;
+}
+
+.sign-up button:hover {
+  color: red;
+  background-color: #2b2b2b;
+}
+
+.sign-up a {
+  background-color: #2b2b2b;
+}
+
+.sign-up button {
+  background-color: #363636;
+}

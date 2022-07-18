@@ -1,0 +1,113 @@
+.profile {
+  width: 400px;
+  min-width: 350px;
+  background-color: #2b2b2b;
+  color: whitesmoke;
+}
+.profile .btn,
+.profile-info .btn {
+  background-color: #363636;
+}
+
+.profile .btn:hover,
+.profile-info .btn:hover {
+  color: red;
+  background-color: #2b2b2b;
+}
+
+.profile textarea {
+  background-color: #2b2b2b;
+  color: whitesmoke;
+  font-weight: bold;
+  width: 100%;
+  min-height: 100px;
+  display: block;
+  outline: none;
+  border: 1px solid #1b1b1b;
+  border-radius: 7px;
+}
+
+.profile textarea:focus,
+.profile textarea:active:focus,
+.profile textarea.active:focus,
+.profile textarea.focus,
+.profile textarea:active.focus,
+.profile textarea.active.focus {
+  outline: none !important;
+  border: none;
+  box-shadow: none !important;
+  border: 1px solid #1b1b1b;
+}
+
+.profile textarea:focus {
+  background-color: #2b2b2b;
+  color: whitesmoke;
+}
+.profile .profile-pic {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+}
+.profile-info {
+  min-width: 600px;
+  box-sizing: border-box;
+
+  background-color: #2b2b2b;
+}
+
+.profile-info table {
+  width: 450px;
+}
+
+.profile-info table td {
+  color: whitesmoke;
+  font-weight: bold;
+}
+
+.profile-info table th,
+.profile-info label {
+  color: #dc3545;
+  font-weight: bold;
+}
+
+.profile-info .text-field {
+  border: none;
+  font-weight: 600;
+  background-color: #2b2b2b;
+  color: whitesmoke;
+  border-bottom: 2px solid #1b1b1b;
+  border-bottom-right-radius: 10px;
+}
+
+.profile-info .text-field:active:focus,
+.profile-info .text-field:focus {
+  outline: none !important;
+  background-color: #2b2b2b;
+  border-bottom: 2px solid #1b1b1b;
+  box-shadow: none !important;
+}
+.profile-info .group {
+  padding: 0px;
+  height: 40px;
+  border-bottom: 2px solid #1b1b1b;
+  border-bottom-right-radius: 10px;
+}
+.profile-info .group a,
+.profile-info .group a:hover {
+  color: whitesmoke;
+}
+
+.profile-info .group .text-field {
+  border: none;
+  width: 92%;
+  padding: 0px;
+}
+.profile-info .group .text-field:focus {
+  border: none;
+  padding: 0px;
+}
+
+.edit-bio .profile-look {
+  width: 200px;
+  height: 200px;
+}
