@@ -193,7 +193,7 @@ function Siderbar() {
                 ) : (
                   <li>
                     <Link
-                      to="/"
+                      to="/auth"
                       onClick={() => setActive("sign_up")}
                       className={
                         active == "sign_up"
