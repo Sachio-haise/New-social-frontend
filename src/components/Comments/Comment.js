@@ -7,6 +7,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { getPosts, getPostsOnly } from "../../redux/post/actions";
 import { LIKE_PENDING } from "../../redux/post/types";
 import { server_url } from "../../config";
+import { useNavigate } from "react-router-dom";
 function Comment({ comment, post }) {
   const [isReply, setIsReply] = useState(false);
   const [parent_id, setParent_id] = useState("");
@@ -22,10 +23,15 @@ function Comment({ comment, post }) {
   const dispatch = useDispatch();
   const auth = useSelector((state) => state.auth.auth);
   var posts = useSelector((state) => state.post.posts);
+  const navigate = useNavigate();
   useEffect(() => {
     setLikeCount(comment.like.length);
   }, [comment]);
   const Reply = async (id) => {
+    if (!auth?.user) {
+      navigate("/auth");
+      return;
+    }
     setreplyLoading(true);
     setIsReply(false);
     const formData = new FormData();
@@ -71,6 +77,10 @@ function Comment({ comment, post }) {
   };
 
   const Like = async (id) => {
+    if (!auth?.user) {
+      navigate("/auth");
+      return;
+    }
     if (likeLoading) {
       return;
     }
@@ -150,6 +160,7 @@ function Comment({ comment, post }) {
             <i style={{ color: like }} className="fa-solid fa-heart "></i>{" "}
             <span>{likeCount}</span>
           </button>
+
           <button
             className="btn fw-bold bttn"
             onClick={() => {
@@ -162,6 +173,7 @@ function Comment({ comment, post }) {
           >
             Reply
           </button>
+
           {comment.user_id._id == auth.user?._id && (
             <>
               <button

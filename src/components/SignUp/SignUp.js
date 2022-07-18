@@ -26,7 +26,7 @@ function SignUp() {
       formData.append("email", email);
       formData.append("password", password);
 
-      res = await axios.post(`/api/sign-up`, formData);
+      res = await axios.post(`${server_url}/api/sign-up`, formData);
     } else {
       formData.append("email", email);
       formData.append("password", password);

@@ -18,6 +18,7 @@ import { LIKE_PENDING } from "../../redux/post/types";
 import Comment from "../Comments/Comment";
 import { server_url } from "../../config";
 import DeletePost from "../DeletePost/DeletePost";
+import { useNavigate } from "react-router-dom";
 
 function Home() {
   const [active, setActive] = useState("");
@@ -27,6 +28,7 @@ function Home() {
   const auth = useSelector((state) => state.auth.auth);
   var posts = useSelector((state) => state.post.posts);
   var postLoading = useSelector((state) => state.post);
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   console.log(posts);
 
@@ -306,7 +308,9 @@ function Home() {
                   <div className="card-footer d-flex justify-content-around ">
                     <a
                       className="like btn fs-6 me-auto"
-                      onClick={() => likePost(post._id)}
+                      onClick={() =>
+                        auth?.user ? likePost(post._id) : navigate("/auth")
+                      }
                     >
                       <i
                         className="fa-solid fa-thumbs-up"
