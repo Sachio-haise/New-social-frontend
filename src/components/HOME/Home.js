@@ -257,7 +257,7 @@ function Home() {
                       </Link>{" "}
                       <br />{" "}
                       <small className="fs-6">
-                        {moment(post.create_At).fromNow()}
+                        {moment(post.created_At).fromNow()}
                       </small>
                     </h5>
                     {auth.user?._id == post.user._id && (
