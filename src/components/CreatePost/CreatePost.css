@@ -1,0 +1,31 @@
+.sign-up .text-field {
+  min-height: 300px;
+  width: 100%;
+  outline: none;
+  border: none;
+  background-color: #808080;
+  color: #2b2b2b;
+  font-weight: bold;
+  caret-color: red;
+}
+
+.sign-up .post-btn {
+  background-color: #363636;
+}
+
+.sign-up .post-btn:focus {
+  background-color: #2b2b2b;
+}
+
+.sign-up .post-btn:hover {
+  color: red;
+  background-color: #2b2b2b;
+}
+
+.sign-up .post-btn:disabled,
+.sign-up .post-btn[disabled] {
+  background-color: #323232;
+  cursor: not-allowed;
+  color: #212529;
+  pointer-events: all !important;
+}

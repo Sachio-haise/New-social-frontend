@@ -13,6 +13,7 @@ import Dashboard from "./components/Admin/Dashboard";
 import Sidebar from "./components/Layout/Admin/Sidebar";
 import UserProfile from "./components/UserProfile/UserProfile";
 import Atest from "./components/Atest/Atest";
+import CreatePost from "./components/CreatePost/CreatePost";
 
 function App() {
   return (
@@ -36,6 +37,7 @@ function App() {
               <Route path="/dashboard" element={<Dashboard />} />
               <Route path="/dashboard-profile" element={<Profile />} />
             </Route>
+            <Route path="/post-action" element={<CreatePost />} />
             <Route path="/test" element={<Atest />} />
           </Routes>
         </Router>

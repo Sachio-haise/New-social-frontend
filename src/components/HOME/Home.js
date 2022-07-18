@@ -17,6 +17,7 @@ import { getPosts, getPostsOnly } from "../../redux/post/actions";
 import { LIKE_PENDING } from "../../redux/post/types";
 import Comment from "../Comments/Comment";
 import { server_url } from "../../config";
+import DeletePost from "../DeletePost/DeletePost";
 
 function Home() {
   const [active, setActive] = useState("");
@@ -182,7 +183,8 @@ function Home() {
                       : "py-2 px-5 "
                   }
                 >
-                  <a
+                  <Link
+                    to="/post-action"
                     href="#"
                     className={active == "new_feed" ? "text-danger" : ""}
                     onClick={() => {
@@ -191,12 +193,9 @@ function Home() {
                       });
                       setActive("new_feed");
                     }}
-                    data-bs-toggle="modal"
-                    data-bs-target="#staticBackdrop"
                   >
                     ADD POST
-                  </a>
-                  <Post />
+                  </Link>
                 </li>
               </ul>
             </div>
@@ -266,17 +265,16 @@ function Home() {
                         </button>
                         <ul className="dropdown-menu dropdown-menu-end">
                           <li>
-                            <button
+                            <Link
+                              to="/post-action"
                               className="dropdown-item"
                               type="button"
                               onClick={() => {
                                 trans_ID(post._id);
                               }}
-                              data-bs-toggle="modal"
-                              data-bs-target="#staticBackdrop"
                             >
                               Edit
-                            </button>
+                            </Link>
                           </li>
                           <li>
                             <button
@@ -384,6 +382,7 @@ function Home() {
                 </div>
               </div>
             ))}
+            <DeletePost />
           </div>
         </div>
       </div>
