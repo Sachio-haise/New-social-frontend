@@ -38,9 +38,6 @@ function CreatePost() {
   const createPost = async (e) => {
     e.preventDefault();
 
-    dispatch({
-      type: REMOVE_DATA,
-    });
     if (!auth) {
       return;
     }
@@ -62,9 +59,6 @@ function CreatePost() {
           },
         }
       );
-      dispatch({
-        type: REMOVE_DATA,
-      });
     } else {
       await axios.post(`${server_url}/api/create-post`, formData, {
         headers: {
@@ -72,18 +66,18 @@ function CreatePost() {
           "Content-Type": "multipart/form-data",
         },
       });
-
-      dispatch({
-        type: REMOVE_DATA,
-      });
     }
     console.log("leee");
 
     await dispatch(getPosts());
-    navigate("/");
-    setFile("");
-    setImage("");
-    setPost("");
+    if (navigate("/")) {
+      await dispatch({
+        type: REMOVE_DATA,
+      });
+      setFile("");
+      setImage("");
+      setPost("");
+    }
   };
   return (
     <div className="container-fluid mx-auto mt-5" style={{ width: "600px" }}>
