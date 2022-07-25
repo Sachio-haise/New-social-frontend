@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import { getUsers } from "../../../redux/admin/actions";
 import { getAuth } from "../../../redux/auth/reducer";
 import { LOGOUT } from "../../../redux/auth/types";
 import { getPosts } from "../../../redux/post/actions";
@@ -23,6 +24,7 @@ function Siderbar() {
       setIsHome(true);
     }
     dispatch(getPosts());
+    dispatch(getUsers());
 
     dispatch(getAuth());
   }, [dispatch, location]);

@@ -31,7 +31,7 @@ function App() {
             <Route element={<HasAuth />}>
               <Route path="/auth" element={<SignUp />} />
             </Route>
-            <Route path="/user" element={<UserProfile />} />
+            <Route path="/user/:id" element={<UserProfile />} />
 
             <Route element={<IsAdmin />}>
               <Route path="/dashboard" element={<Dashboard />} />

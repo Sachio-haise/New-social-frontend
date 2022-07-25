@@ -5,6 +5,7 @@ import "./Profile.css";
 import { useLocation } from "react-router-dom";
 import { getAuth } from "../../redux/auth/reducer";
 import { server_url } from "../../config";
+import moment from "moment";
 function Profile() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -163,15 +164,15 @@ function Profile() {
               <tbody>
                 <tr>
                   <th>Email</th>
-                  <td>aung@gmail.com</td>
+                  <td>{auth.user?.email}</td>
                 </tr>
                 <tr>
                   <th>Account Age</th>
-                  <td>5 days</td>
+                  <td>{moment(auth.user?.created_at).fromNow()}</td>
                 </tr>
                 <tr>
                   <th>Role</th>
-                  <td>User</td>
+                  <td>{auth.user?.isAdmin}</td>
                 </tr>
               </tbody>
             </table>

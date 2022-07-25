@@ -245,7 +245,7 @@ function Home() {
                     <h5 className="ms-2">
                       <Link
                         style={{ color: "whitesmoke", textDecoration: "none" }}
-                        to="/user"
+                        to={`/user/${post.user._id}`}
                         onClick={() => {
                           dispatch({
                             type: TRANS_USER_DATA,
