@@ -22,6 +22,20 @@ export const HasAuth = () => {
 auth = "";
 
 export const IsAdmin = () => {
+  var auth = localStorage.getItem("a%t");
+  var user;
+  if (auth) {
+    user = JSON.parse(
+      CryptoJS.enc.Utf8.stringify(
+        CryptoJS.AES.decrypt(auth, "secret", {
+          keySize: 128 / 8,
+          iv: "secret",
+          mode: CryptoJS.mode.CBC,
+          padding: CryptoJS.pad.Pkcs7,
+        })
+      )
+    );
+  }
   return (
     <div className="container-fluid">
       <div className="row">

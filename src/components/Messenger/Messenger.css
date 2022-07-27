@@ -1,0 +1,13 @@
+.chat-list {
+  background-color: #2b2b2b;
+}
+
+.chat-list .chat-user:hover {
+  background-color: #1f1e1e;
+}
+
+.chat-list .chat-user > img {
+  width: 50px;
+  border-radius: 50%;
+  border: 5px solid #1f1e1e;
+}

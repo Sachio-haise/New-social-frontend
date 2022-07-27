@@ -4,6 +4,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { getUsers } from "../../../redux/admin/actions";
 import { getAuth } from "../../../redux/auth/reducer";
 import { LOGOUT } from "../../../redux/auth/types";
+import { getRooms } from "../../../redux/chat/actions";
 import { getPosts } from "../../../redux/post/actions";
 import { REMOVE_DATA } from "../../../redux/transfer/types";
 import "./Sidebar.css";
@@ -23,9 +24,10 @@ function Siderbar() {
     } else {
       setIsHome(true);
     }
+
     dispatch(getPosts());
     dispatch(getUsers());
-
+    dispatch(getRooms());
     dispatch(getAuth());
   }, [dispatch, location]);
 
@@ -224,83 +226,95 @@ function Siderbar() {
                 </button>
               </form>
             </ul>
+            {auth.auth.user && auth.auth.user.email_verify_at && (
+              <ul className="navbar-nav ms-auto ">
+                <li className="messenger-icon">
+                  <Link to="/messenger">
+                    <i className="fa-solid fa-comment-dots "></i>
+                  </Link>
+                </li>
+              </ul>
+            )}
             <ul>
               {" "}
               {auth.auth.user && auth.auth.user.email_verify_at ? (
-                <li className="setting dropdown  mt-3">
-                  <a
-                    className="dropdown-toggle dropdown-toggle-split"
-                    href="#"
-                    id="navbarDropdown"
-                    role="button"
-                    data-bs-toggle="dropdown"
-                    aria-expanded="false"
-                  >
-                    <img src={auth.auth.user?.profile} />
-                  </a>
-                  <ul
-                    className="dropdown-menu dropdown-menu-end mt-3 me-5"
-                    aria-labelledby="navbarDropdown"
-                  >
-                    <li>
-                      <a
-                        className="dropdown-item disabled"
-                        href="#"
-                        aria-disabled="true"
-                        disabled
-                        style={{ color: "red" }}
-                      >
-                        {auth.auth.user?.name}
-                      </a>
-                    </li>
-                    <li>
-                      <hr
-                        className="dropdown-divider"
-                        style={{ color: "white" }}
-                      />
-                    </li>
-                    {auth.auth.user?.isAdmin == "user" ? (
+                <>
+                  <li className="setting dropdown  mt-3">
+                    <a
+                      className="dropdown-toggle dropdown-toggle-split"
+                      href="#"
+                      id="navbarDropdown"
+                      role="button"
+                      data-bs-toggle="dropdown"
+                      aria-expanded="false"
+                    >
+                      <img src={auth.auth.user?.profile} />
+                    </a>
+                    <ul
+                      className="dropdown-menu dropdown-menu-end mt-3 me-5"
+                      aria-labelledby="navbarDropdown"
+                    >
                       <li>
-                        {isHome ? (
-                          <Link className="dropdown-item" to="/user-profile">
-                            Profile
-                          </Link>
-                        ) : (
-                          <Link className="dropdown-item" to="/">
-                            Home
-                          </Link>
-                        )}
+                        <a
+                          className="dropdown-item disabled"
+                          href="#"
+                          aria-disabled="true"
+                          disabled
+                          style={{ color: "red" }}
+                        >
+                          {auth.auth.user?.name}
+                        </a>
                       </li>
-                    ) : (
                       <li>
-                        {isHome ? (
-                          <Link className="dropdown-item" to="/dashboard">
-                            Dashboard
-                          </Link>
-                        ) : (
-                          <Link className="dropdown-item" to="/">
-                            Home
-                          </Link>
-                        )}
+                        <hr
+                          className="dropdown-divider"
+                          style={{ color: "white" }}
+                        />
                       </li>
-                    )}
-                    <li>
-                      <hr
-                        className="dropdown-divider"
-                        style={{ color: "white" }}
-                      />
-                    </li>
-                    <li>
-                      <a
-                        className="dropdown-item"
-                        href="#"
-                        onClick={() => logout()}
-                      >
-                        LOGOUT
-                      </a>
-                    </li>
-                  </ul>
-                </li>
+                      {auth.auth.user?.isAdmin == "user" ? (
+                        <li>
+                          {isHome ? (
+                            <Link className="dropdown-item" to="/user-profile">
+                              Profile
+                            </Link>
+                          ) : (
+                            <Link className="dropdown-item" to="/">
+                              Home
+                            </Link>
+                          )}
+                        </li>
+                      ) : (
+                        <li>
+                          {isHome ? (
+                            <Link className="dropdown-item" to="/dashboard">
+                              Dashboard
+                            </Link>
+                          ) : (
+                            <Link className="dropdown-item" to="/">
+                              Home
+                            </Link>
+                          )}
+                        </li>
+                      )}
+
+                      <li>
+                        <hr
+                          className="dropdown-divider"
+                          style={{ color: "white" }}
+                        />
+                      </li>
+                      <li>
+                        <a
+                          className="dropdown-item"
+                          href="#"
+                          onClick={() => logout()}
+                        >
+                          LOGOUT
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
+                </>
               ) : (
                 <li
                   className=" pe-3 pt-2 fs-5"

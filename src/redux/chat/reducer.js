@@ -1,8 +1,9 @@
-import { GET_MESSAGES } from "./types";
+import { GET_MESSAGES, GET_ROOMS } from "./types";
 
 const initialState = {
   loading: false,
   messages: [],
+  rooms: [],
   error: "",
 };
 
@@ -12,9 +13,15 @@ export const chatReducer = (state = initialState, action) => {
       return {
         loading: false,
         messages: action.payload,
+        rooms: [],
         error: "",
       };
+    case GET_ROOMS:
+      return {
+        ...state,
+        rooms: action.payload,
+      };
     default:
-      return initialState;
+      return state;
   }
 };

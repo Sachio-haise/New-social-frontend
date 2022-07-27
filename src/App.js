@@ -14,6 +14,7 @@ import Sidebar from "./components/Layout/Admin/Sidebar";
 import UserProfile from "./components/UserProfile/UserProfile";
 import Atest from "./components/Atest/Atest";
 import CreatePost from "./components/CreatePost/CreatePost";
+import Messenger from "./components/Messenger/Messenger";
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
             <Route element={<HasAuth />}>
               <Route path="/auth" element={<SignUp />} />
             </Route>
+            <Route path="/messenger" element={<Messenger />} />
             <Route path="/user/:id" element={<UserProfile />} />
 
             <Route element={<IsAdmin />}>

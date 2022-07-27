@@ -190,14 +190,16 @@ function Home() {
                   }
                 >
                   <Link
-                    to="/post-action"
+                    to={auth.user ? "/post-action" : "/auth"}
                     href="#"
                     className={active == "new_feed" ? "text-danger" : ""}
                     onClick={() => {
-                      dispatch({
-                        type: REMOVE_DATA,
-                      });
-                      setActive("new_feed");
+                      if (auth.user) {
+                        dispatch({
+                          type: REMOVE_DATA,
+                        });
+                        setActive("new_feed");
+                      }
                     }}
                   >
                     ADD POST
@@ -208,23 +210,23 @@ function Home() {
             <div className="side-menu p-3 text-light fw-bold card">
               <div className="card-body">
                 <h5>About This Site</h5>
+
+                <legend>Features</legend>
                 <ul>
+                  <li>Can Create Account with gmail</li>
+                  <li>Create Post</li>
+                  <li>Comment Post</li>
+                  <li>Like Post</li>
+                  <li>Like Comments</li>
+                  <li>Reply Comments</li>
                   <li>
-                    <legend>Features</legend>
-                    <ul>
-                      <li>Can Create Account with gmail</li>
-                      <li>Create Post</li>
-                      <li>Comment Post</li>
-                      <li>Like Post</li>
-                      <li>Like Comments</li>
-                      <li>Reply Comments</li>
-                    </ul>
-                    <p>
-                      And we will add more features and fix more about
-                      responsive for good user experiences{" "}
-                    </p>
+                    Can check other user profile and send messages each other
                   </li>
                 </ul>
+                <p>
+                  And we will add more features and fix more about responsive
+                  for good user experiences{" "}
+                </p>
               </div>
               <div className="card-footer">
                 Join our discord channel to collaborator our project. &nbsp;

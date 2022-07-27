@@ -152,3 +152,14 @@ input.active.focus {
 .navbar-collapse .sign_up:hover {
   color: red;
 }
+.messenger-icon {
+  font-size: 1.7rem;
+}
+
+.messenger-icon .fa-comment-dots {
+  color: #1f1e1e;
+}
+
+.messenger-icon .fa-comment-dots:hover {
+  color: #fe0000;
+}

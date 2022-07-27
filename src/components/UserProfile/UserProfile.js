@@ -29,7 +29,7 @@ function UserProfile() {
   }
 
   useEffect(() => {
-    if (user._id == auth.user._id) {
+    if (user._id == auth.user?._id) {
       navigate("/user-profile");
     }
   });
@@ -91,8 +91,12 @@ function UserProfile() {
               <button
                 className="btn fw-bold"
                 onClick={() => {
-                  getRoomId();
-                  setChatStatus(!chatStatus);
+                  if (!auth.user) {
+                    navigate("/auth");
+                  } else {
+                    getRoomId();
+                    setChatStatus(!chatStatus);
+                  }
                 }}
               >
                 Message
@@ -156,7 +160,7 @@ function UserProfile() {
               </div>
               <div className="chat-body mt-3">
                 {roomData.message.map((message) =>
-                  message.creator != auth.user._id ? (
+                  message.creator != auth.user?._id ? (
                     <div className=" d-flex flex-row-reverse ">
                       <div className="row my-2 me-2">
                         <div className="message-blue-right p-3  col-9 ">
